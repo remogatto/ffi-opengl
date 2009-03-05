@@ -1,9 +1,0 @@
-%{
-module FFI
-%}
-
-%include gl.h
-
-%{
-end
-%}
