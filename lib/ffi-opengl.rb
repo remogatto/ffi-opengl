@@ -43,6 +43,12 @@ module FFIOpenGL
 
 end
 
+begin
+  require 'rubygems'
+rescue
+  nil # try without it
+end
+require 'ffi'
 FFIOpenGL.require_all_libs_relative_to(__FILE__)
 
 # EOF
