@@ -23,7 +23,7 @@ See examples in 'examples/' folder.
 
 == DOWNLOAD/INSTALL:
 
-* git clone http://github.com/remogatto/ffi-opengl/tree/master
+   git clone http://github.com/remogatto/ffi-opengl/tree/master
 
 == LICENSE:
 
