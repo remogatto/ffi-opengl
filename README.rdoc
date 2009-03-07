@@ -14,8 +14,9 @@ expect idiomatic ruby inside!
 
 * Full [auto-generated] wrap of the OpenGL libraries.
 * No compilation needed.
-* Should be multiplatform/multi[ruby]implementation (MRI, JRuby,
-  Rubinius(?))
+* Tested only on my Ubuntu 8.10 i386 but it *should* be
+  multiplatform/multi[ruby]implementation (MRI, JRuby, Rubinius(?),
+  etc.)
 
 == SYNOPSIS:
 
