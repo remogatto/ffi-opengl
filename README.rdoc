@@ -33,7 +33,7 @@ please refer to OpenGL reference pages.
 
 == LINKS:
 
-[1] - http://kenai.com/projects/ruby-ffi/sources/swig-generator/show
+1. http://kenai.com/projects/ruby-ffi/sources/swig-generator/show
 
 == LICENSE:
 
