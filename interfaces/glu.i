@@ -4,7 +4,7 @@
 require 'ffi'
 module GLU
   extend FFI::Library
-  ffi_lib 'glut'
+  ffi_lib 'GLU'
 %}
 
 /*
