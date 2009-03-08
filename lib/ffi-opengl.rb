@@ -49,6 +49,7 @@ rescue
   nil # try without it
 end
 require 'ffi'
+require "#{FFIOpenGL.libpath('ffi-opengl/platform')}"
 FFIOpenGL.require_all_libs_relative_to(__FILE__)
 
 # EOF

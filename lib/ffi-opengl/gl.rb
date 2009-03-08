@@ -1,8 +1,5 @@
-
-require 'ffi'
 module GL
   extend FFI::Library
-  ffi_lib 'GL'
   GL_VERSION_1_1 = 1
   GL_VERSION_1_2 = 1
   GL_VERSION_1_3 = 1

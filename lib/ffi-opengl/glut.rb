@@ -1,8 +1,5 @@
-
-require 'ffi'
 module GLUT
   extend FFI::Library
-  ffi_lib 'glut'
   FREEGLUT = 1
   GLUT_API_VERSION = 4
   FREEGLUT_VERSION_2_0 = 1

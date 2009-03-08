@@ -1,8 +1,5 @@
-
-require 'ffi'
 module GLU
   extend FFI::Library
-  ffi_lib 'GLU'
   GLU_EXT_object_space_tess = 1
   GLU_EXT_nurbs_tessellator = 1
   GLU_FALSE = 0
