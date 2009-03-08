@@ -28,6 +28,13 @@ please refer to OpenGL reference pages.
 
 == DOWNLOAD/INSTALL:
 
+To download and install the gem from github:
+
+  [sudo] gem sources -a http://gems.github.com
+  [sudo] gem install remogatto-ffi-opengl
+
+To download the develpment trunk:
+
   git clone http://github.com/remogatto/ffi-opengl/tree/master
 
 == LINKS:
