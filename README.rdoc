@@ -14,9 +14,7 @@ expect idiomatic ruby inside!
 
 * Full [auto-generated] wrap of the OpenGL libraries.
 * No compilation needed.
-* Tested only on my Ubuntu 8.10 i386 but it *should* be
-  multiplatform/multi[ruby]implementation (MRI, JRuby, Rubinius(?),
-  etc.)
+* Not yet tested on windows/macosx platforms
 
 == SYNOPSIS:
 
@@ -26,6 +24,7 @@ please refer to OpenGL reference pages.
 == REQUIREMENTS:
 
 * ffi >= 0.3.0 (development version)
+* OpenGL libraries >= 1.2
 
 == DOWNLOAD/INSTALL:
 
