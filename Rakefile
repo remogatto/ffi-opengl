@@ -27,7 +27,7 @@ PROJ.rubyforge.name = 'ffi-opengl'
 
 PROJ.readme_file = 'README.rdoc'
 
-PROJ.ann.paragraphs << 'FEATURES' << 'SYNOPSIS' << 'REQUIREMENTS' << 'DOWNLOAD/INSTALL'
+PROJ.ann.paragraphs << 'FEATURES/PROBLEMS' << 'SYNOPSIS' << 'REQUIREMENTS' << 'DOWNLOAD/INSTALL' << 'LINKS'
 PROJ.ann.email[:to] << 'dev@ruby-ffi.kenai.com' << 'users@ruby-ffi.kenai.com'
 PROJ.ann.email[:server] = 'smtp.gmail.com'
 
