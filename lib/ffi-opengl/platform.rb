@@ -22,6 +22,6 @@ module GLUT
   when /linux/
     ffi_lib 'glut'
   when /darwin/
-    ffi_lib '/System/Library/Frameworks/GLUT.framework/GLUT.dylib'
+    ffi_lib '/System/Library/Frameworks/GLUT.framework/GLUT'
   end
 end
