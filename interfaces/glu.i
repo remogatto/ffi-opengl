@@ -1,10 +1,8 @@
 %module glu
 
 %{
-require 'ffi'
 module GLU
   extend FFI::Library
-  ffi_lib 'GLU'
 %}
 
 /*

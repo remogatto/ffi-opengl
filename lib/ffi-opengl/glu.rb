@@ -1,3 +1,4 @@
+
 module GLU
   extend FFI::Library
   GLU_EXT_object_space_tess = 1
@@ -176,9 +177,9 @@ module GLU
   attach_function :gluEndPolygon, [ :pointer ], :void
   attach_function :gluEndSurface, [ :pointer ], :void
   attach_function :gluEndTrim, [ :pointer ], :void
-  attach_function :gluErrorString, [ :uint ], :uchar
+  attach_function :gluErrorString, [ :uint ], :pointer
   attach_function :gluGetNurbsProperty, [ :pointer, :uint, :pointer ], :void
-  attach_function :gluGetString, [ :uint ], :uchar
+  attach_function :gluGetString, [ :uint ], :pointer
   attach_function :gluGetTessProperty, [ :pointer, :uint, :pointer ], :void
   attach_function :gluLoadSamplingMatrices, [ :pointer, :pointer, :pointer, :pointer ], :void
   attach_function :gluLookAt, [ :double, :double, :double, :double, :double, :double, :double, :double, :double ], :void

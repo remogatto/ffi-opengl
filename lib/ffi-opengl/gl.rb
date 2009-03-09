@@ -1,3 +1,4 @@
+
 module GL
   extend FFI::Library
   GL_VERSION_1_1 = 1
@@ -572,7 +573,7 @@ module GL
   attach_function :glPopClientAttrib, [  ], :void
   attach_function :glRenderMode, [ :uint ], :int
   attach_function :glGetError, [  ], :uint
-  attach_function :glGetString, [ :uint ], :uchar
+  attach_function :glGetString, [ :uint ], :pointer
   attach_function :glFinish, [  ], :void
   attach_function :glFlush, [  ], :void
   attach_function :glHint, [ :uint, :uint ], :void

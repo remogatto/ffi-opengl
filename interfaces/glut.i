@@ -1,10 +1,8 @@
 %module opengl
 
 %{
-require 'ffi'
 module GLUT
   extend FFI::Library
-  ffi_lib 'glut'
 %}
 
 /*

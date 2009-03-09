@@ -1,3 +1,4 @@
+
 module GLUT
   extend FFI::Library
   FREEGLUT = 1
@@ -244,8 +245,8 @@ module GLUT
   attach_function :glutBitmapWidth, [ :pointer, :int ], :int
   attach_function :glutStrokeCharacter, [ :pointer, :int ], :void
   attach_function :glutStrokeWidth, [ :pointer, :int ], :int
-  attach_function :glutBitmapLength, [ :pointer, :string ], :int
-  attach_function :glutStrokeLength, [ :pointer, :string ], :int
+  attach_function :glutBitmapLength, [ :pointer, :pointer ], :int
+  attach_function :glutStrokeLength, [ :pointer, :pointer ], :int
   attach_function :glutWireCube, [ :double ], :void
   attach_function :glutSolidCube, [ :double ], :void
   attach_function :glutWireSphere, [ :double, :int, :int ], :void
