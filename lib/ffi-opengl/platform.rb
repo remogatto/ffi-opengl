@@ -2,7 +2,7 @@ module GL
   extend FFI::Library
   case RUBY_PLATFORM
   when /linux/
-    ffi_lib 'GL'
+    ffi_lib 'libGL.so.1'
   when /darwin/
     ffi_lib '/System/Library/Frameworks/OpenGL.framework/Libraries/libGL.dylib'
   end
@@ -11,7 +11,7 @@ module GLU
   extend FFI::Library
   case RUBY_PLATFORM
   when /linux/
-    ffi_lib 'GLU'
+    ffi_lib 'libGLU.so.1'
   when /darwin/
     ffi_lib '/System/Library/Frameworks/OpenGL.framework/Libraries/libGLU.dylib'
   end
@@ -20,7 +20,7 @@ module GLUT
   extend FFI::Library
   case RUBY_PLATFORM
   when /linux/
-    ffi_lib 'glut'
+    ffi_lib 'libglut.so.3'
   when /darwin/
     ffi_lib '/System/Library/Frameworks/GLUT.framework/GLUT'
   end
