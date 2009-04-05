@@ -1,3 +1,16 @@
+== 0.2.0 / 2009-04-05
+
+* Major improvements:
+  * Add support for MacOSX
+  * Add support for JRuby
+
+* Minor improvements:
+  * Re-generate wrapper code fixing issues with callbacks
+  * Fix return type in functions that return string
+  * Add gears example
+  * Add a trivial benchmark that compares perfomance against
+    ruby-opengl
+
 == 0.1.0 / 2009-03-06
 
 * 1 major enhancement
