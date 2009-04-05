@@ -20,8 +20,8 @@ don't expect idiomatic ruby inside!
 
 * No need of opengl development libraries.
 
-* No compilation needed (if you use JRuby or you have ruby-ffi
-  installed on your system).
+* No compilation needed (once you have ruby-ffi installed or you are
+  using JRuby).
 
 * Not yet tested on windows platform.
 
