@@ -201,7 +201,7 @@ module GLUT
   attach_function :glutPostWindowOverlayRedisplay, [ :int ], :void
   attach_function :glutShowOverlay, [  ], :void
   attach_function :glutHideOverlay, [  ], :void
-  attach_function :glutCreateMenu, [ callback([ :int ], :void) ], :int
+  attach_function :glutCreateMenu, [ callback(:callback, [ :int ], :void) ], :int
   attach_function :glutDestroyMenu, [ :int ], :void
   attach_function :glutGetMenu, [  ], :int
   attach_function :glutSetMenu, [ :int ], :void
@@ -212,31 +212,31 @@ module GLUT
   attach_function :glutRemoveMenuItem, [ :int ], :void
   attach_function :glutAttachMenu, [ :int ], :void
   attach_function :glutDetachMenu, [ :int ], :void
-  attach_function :glutTimerFunc, [ :uint, callback([ :int ], :void), :int ], :void
-  attach_function :glutIdleFunc, [ callback([  ], :void) ], :void
-  attach_function :glutKeyboardFunc, [ callback([ :uchar, :int, :int ], :void) ], :void
-  attach_function :glutSpecialFunc, [ callback([ :int, :int, :int ], :void) ], :void
-  attach_function :glutReshapeFunc, [ callback([ :int, :int ], :void) ], :void
-  attach_function :glutVisibilityFunc, [ callback([ :int ], :void) ], :void
-  attach_function :glutDisplayFunc, [ callback([  ], :void) ], :void
-  attach_function :glutMouseFunc, [ callback([ :int, :int, :int, :int ], :void) ], :void
-  attach_function :glutMotionFunc, [ callback([ :int, :int ], :void) ], :void
-  attach_function :glutPassiveMotionFunc, [ callback([ :int, :int ], :void) ], :void
-  attach_function :glutEntryFunc, [ callback([ :int ], :void) ], :void
-  attach_function :glutKeyboardUpFunc, [ callback([ :uchar, :int, :int ], :void) ], :void
-  attach_function :glutSpecialUpFunc, [ callback([ :int, :int, :int ], :void) ], :void
-  attach_function :glutJoystickFunc, [ callback([ :uint, :int, :int, :int ], :void), :int ], :void
-  attach_function :glutMenuStateFunc, [ callback([ :int ], :void) ], :void
-  attach_function :glutMenuStatusFunc, [ callback([ :int, :int, :int ], :void) ], :void
-  attach_function :glutOverlayDisplayFunc, [ callback([  ], :void) ], :void
-  attach_function :glutWindowStatusFunc, [ callback([ :int ], :void) ], :void
-  attach_function :glutSpaceballMotionFunc, [ callback([ :int, :int, :int ], :void) ], :void
-  attach_function :glutSpaceballRotateFunc, [ callback([ :int, :int, :int ], :void) ], :void
-  attach_function :glutSpaceballButtonFunc, [ callback([ :int, :int ], :void) ], :void
-  attach_function :glutButtonBoxFunc, [ callback([ :int, :int ], :void) ], :void
-  attach_function :glutDialsFunc, [ callback([ :int, :int ], :void) ], :void
-  attach_function :glutTabletMotionFunc, [ callback([ :int, :int ], :void) ], :void
-  attach_function :glutTabletButtonFunc, [ callback([ :int, :int, :int, :int ], :void) ], :void
+  attach_function :glutTimerFunc, [ :uint, callback(:callback, [ :int ], :void), :int ], :void
+  attach_function :glutIdleFunc, [ callback(:callback, [  ], :void) ], :void
+  attach_function :glutKeyboardFunc, [ callback(:callback, [ :uchar, :int, :int ], :void) ], :void
+  attach_function :glutSpecialFunc, [ callback(:callback, [ :int, :int, :int ], :void) ], :void
+  attach_function :glutReshapeFunc, [ callback(:callback, [ :int, :int ], :void) ], :void
+  attach_function :glutVisibilityFunc, [ callback(:callback, [ :int ], :void) ], :void
+  attach_function :glutDisplayFunc, [ callback(:callback, [  ], :void) ], :void
+  attach_function :glutMouseFunc, [ callback(:callback, [ :int, :int, :int, :int ], :void) ], :void
+  attach_function :glutMotionFunc, [ callback(:callback, [ :int, :int ], :void) ], :void
+  attach_function :glutPassiveMotionFunc, [ callback(:callback, [ :int, :int ], :void) ], :void
+  attach_function :glutEntryFunc, [ callback(:callback, [ :int ], :void) ], :void
+  attach_function :glutKeyboardUpFunc, [ callback(:callback, [ :uchar, :int, :int ], :void) ], :void
+  attach_function :glutSpecialUpFunc, [ callback(:callback, [ :int, :int, :int ], :void) ], :void
+  attach_function :glutJoystickFunc, [ callback(:callback, [ :uint, :int, :int, :int ], :void), :int ], :void
+  attach_function :glutMenuStateFunc, [ callback(:callback, [ :int ], :void) ], :void
+  attach_function :glutMenuStatusFunc, [ callback(:callback, [ :int, :int, :int ], :void) ], :void
+  attach_function :glutOverlayDisplayFunc, [ callback(:callback, [  ], :void) ], :void
+  attach_function :glutWindowStatusFunc, [ callback(:callback, [ :int ], :void) ], :void
+  attach_function :glutSpaceballMotionFunc, [ callback(:callback, [ :int, :int, :int ], :void) ], :void
+  attach_function :glutSpaceballRotateFunc, [ callback(:callback, [ :int, :int, :int ], :void) ], :void
+  attach_function :glutSpaceballButtonFunc, [ callback(:callback, [ :int, :int ], :void) ], :void
+  attach_function :glutButtonBoxFunc, [ callback(:callback, [ :int, :int ], :void) ], :void
+  attach_function :glutDialsFunc, [ callback(:callback, [ :int, :int ], :void) ], :void
+  attach_function :glutTabletMotionFunc, [ callback(:callback, [ :int, :int ], :void) ], :void
+  attach_function :glutTabletButtonFunc, [ callback(:callback, [ :int, :int, :int, :int ], :void) ], :void
   attach_function :glutGet, [ :uint ], :int
   attach_function :glutDeviceGet, [ :uint ], :int
   attach_function :glutGetModifiers, [  ], :int
