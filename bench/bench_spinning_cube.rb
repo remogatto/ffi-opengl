@@ -1,4 +1,5 @@
-require File.expand_path(File.join(File.dirname(__FILE__), %w[.. lib ffi-opengl]))
+$:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "..", "lib")))
+require 'ffi-opengl'
 
 require 'benchmark'
 

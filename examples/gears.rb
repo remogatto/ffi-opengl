@@ -10,10 +10,11 @@
 # 2005-01-09 Original C version (gears.c) by Brian Paul et al.
 # http://cvs.freedesktop.org/mesa/Mesa/progs/demos/gears.c?rev=1.8
 
-require File.expand_path(File.join(File.dirname(__FILE__), %w[.. lib ffi-opengl]))
+$:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "..", "lib")))
+require 'ffi-opengl'
 
 class Gears
-  include FFI, GL, GLU, GLUT
+  include FFI, GL, GLU, GLUT, Math
 
   POS = MemoryPointer.new(:float, 4).put_array_of_float(0, [5.0, 5.0, 10.0, 0.0])
   RED = MemoryPointer.new(:float, 4).put_array_of_float(0, [0.8, 0.1, 0.0, 1.0]) 

@@ -22,7 +22,7 @@ PROJ.name = 'ffi-opengl'
 PROJ.authors = 'Andrea Fazzi'
 PROJ.email = 'andrea.fazzi@alcacoop.it'
 PROJ.url = 'http://github.com/remogatto/ffi-opengl'
-PROJ.version = FFIOpenGL::VERSION
+PROJ.version = '0.2.0'
 PROJ.rubyforge.name = 'ffi-opengl'
 
 PROJ.readme_file = 'README.rdoc'

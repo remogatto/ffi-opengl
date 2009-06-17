@@ -67,7 +67,8 @@ class SpinningCube
 end
 
 if __FILE__ == $0
-  require File.expand_path(File.join(File.dirname(__FILE__), %w[.. lib ffi-opengl]))
+  $:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "..", "lib")))
+  require 'ffi-opengl'
   include FFI, GL, GLU, GLUT
   app = SpinningCube.new
   app.light_diffuse = MemoryPointer.new(:float, 4).put_array_of_float(0, [1.0, 0.0, 0.0, 1.0])

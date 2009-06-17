@@ -1,5 +1,7 @@
+$:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "..", "lib")))
+require 'ffi-opengl'
 require File.expand_path(File.join(File.dirname(__FILE__), %w[.. examples spinning_cube]))
-require File.expand_path(File.join(File.dirname(__FILE__), %w[.. lib ffi-opengl]))
+
 
 include FFI, GL, GLU, GLUT
 app = SpinningCube.new(ARGV[0].to_i)
