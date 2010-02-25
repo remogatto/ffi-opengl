@@ -157,6 +157,7 @@ module GLU
   GLU_TESS_WINDING_ABS_GEQ_TWO = 100134
   GLU_TESS_MAX_COORD = 1.0e150
   callback(:_GLUfuncptr, [  ], :void)
+  callback(:_GLUfuncptr_tess, [:pointer, :pointer, :pointer, :pointer], :void)
   attach_function :gluBeginCurve, [ :pointer ], :void
   attach_function :gluBeginPolygon, [ :pointer ], :void
   attach_function :gluBeginSurface, [ :pointer ], :void
@@ -208,7 +209,7 @@ module GLU
   attach_function :gluSphere, [ :pointer, :double, :int, :int ], :void
   attach_function :gluTessBeginContour, [ :pointer ], :void
   attach_function :gluTessBeginPolygon, [ :pointer, :pointer ], :void
-  attach_function :gluTessCallback, [ :pointer, :uint, :_GLUfuncptr ], :void
+  attach_function :gluTessCallback, [ :pointer, :uint, :_GLUfuncptr_tess ], :void
   attach_function :gluTessEndContour, [ :pointer ], :void
   attach_function :gluTessEndPolygon, [ :pointer ], :void
   attach_function :gluTessNormal, [ :pointer, :double, :double, :double ], :void
