@@ -145,11 +145,12 @@ DIFF = if WIN32 then 'diff.exe'
          else 'diff' end
        end unless defined? DIFF
 
-SUDO = if WIN32 then ''
-       else
-         if quiet {system 'which sudo'} then 'sudo'
-         else '' end
-       end
+SUDO = ''
+# SUDO = if WIN32 then ''
+#        else
+#          if quiet {system 'which sudo'} then 'sudo'
+#          else '' end
+#        end
 
 RCOV = WIN32 ? 'rcov.bat' : 'rcov'
 RDOC = WIN32 ? 'rdoc.bat' : 'rdoc'
