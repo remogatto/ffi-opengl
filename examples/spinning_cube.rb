@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 #
 # Based on OpenGL CodeColòny tutorial
 # http://www.codecolony.de/ 
