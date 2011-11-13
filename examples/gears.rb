@@ -200,9 +200,9 @@ class Gears
   # Change view angle, exit upon ESC
   def key(k, x, y)
     case k
-      when ?z
+      when ?z.ord
         @view_rotz += 5.0
-      when ?Z
+      when ?Z.ord
         @view_rotz -= 5.0
       when 27 # Escape
         exit
