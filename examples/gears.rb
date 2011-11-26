@@ -298,6 +298,14 @@ class Gears
     end
     @x0, @y0 = x, y
   end
+  
+  def make_callback(sym)
+      if(@callbacks == nil)
+          @callbacks = {}
+      end
+      @callbacks[sym] = method(sym).to_proc
+      @callbacks[sym]
+  end
 
   def initialize
     # argc, argv parameters
@@ -310,13 +318,13 @@ class Gears
     glutCreateWindow('Gears')
     init()
 
-    glutDisplayFunc(method(:draw).to_proc)
-    glutReshapeFunc(method(:reshape).to_proc)
-    glutKeyboardFunc(method(:key).to_proc)
-    glutSpecialFunc(method(:special).to_proc)
-    glutVisibilityFunc(method(:visible).to_proc)
-    glutMouseFunc(method(:mouse).to_proc)
-    glutMotionFunc(method(:motion).to_proc)
+    glutDisplayFunc(make_callback(:draw))
+    glutReshapeFunc(make_callback(:reshape))
+    glutKeyboardFunc(make_callback(:key))
+    glutSpecialFunc(make_callback(:special))
+    glutVisibilityFunc(make_callback(:visible))
+    glutMouseFunc(make_callback(:mouse))
+    glutMotionFunc(make_callback(:motion))
   end
 
   def start

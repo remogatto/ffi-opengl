@@ -47,7 +47,41 @@ class SpinningCube
     @x_rotated += 0.3
     @y_rotated += 0.1
     @z_rotated += -0.4
-    display
+    glutPostRedisplay()
+  end
+    
+    def key(k, x, y)
+      case k
+        when ?a.ord
+            @y_rotated += 0.1
+        when ?d.ord
+            @y_rotated -= 0.1
+        when 27 # Escape
+            exit
+        end
+        glutPostRedisplay()
+    end
+    
+    def special(k, x, y)
+        case k
+        when GLUT_KEY_UP
+            @x_rotated += 5.0
+        when GLUT_KEY_DOWN
+            @x_rotated -= 5.0
+        when GLUT_KEY_LEFT
+            @y_rotated += 5.0
+        when GLUT_KEY_RIGHT
+            @y_rotated -= 5.0
+        end
+        glutPostRedisplay()
+    end
+  
+  def make_callback(sym)
+      if(@callbacks == nil)
+          @callbacks = {}
+      end
+      @callbacks[sym] = method(sym).to_proc
+      @callbacks[sym]
   end
 
   def start
@@ -61,9 +95,12 @@ class SpinningCube
     glEnable(GL_CULL_FACE)
     glShadeModel(GL_SMOOTH)
     glClearColor(0.0, 0.0, 0.0, 0.0)
-    glutDisplayFunc(method(:display).to_proc)
-    glutIdleFunc(method(:idle).to_proc)
-    glutReshapeFunc(method(:reshape).to_proc)
+    glutDisplayFunc(make_callback(:display))
+    glutIdleFunc(make_callback(:idle))
+    glutReshapeFunc(make_callback(:reshape))
+    glutSpecialFunc(make_callback(:special))
+    glutKeyboardFunc(make_callback(:key))
+    glutSpecialFunc(make_callback(:special))
     glutMainLoop
   end
 end
