@@ -283,7 +283,7 @@ class Gears
   end
 
   def visible(vis)
-    glutIdleFunc((vis == GLUT_VISIBLE ? method(:idle).to_proc : nil))
+    glutIdleFunc((vis == GLUT_VISIBLE ? make_callback(:idle) : nil))
   end
 
   def mouse(button, state, x, y)
@@ -303,7 +303,9 @@ class Gears
       if(@callbacks == nil)
           @callbacks = {}
       end
-      @callbacks[sym] = method(sym).to_proc
+      if(@callbacks[sym] == nil)
+          @callbacks[sym] = method(sym).to_proc
+      end
       @callbacks[sym]
   end
 

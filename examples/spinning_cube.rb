@@ -38,7 +38,7 @@ class SpinningCube
     exit if (y == 0 || x == 0) 
     glMatrixMode(GL_PROJECTION)  
     glLoadIdentity
-    gluPerspective(30.0, x / y, 0.5, 20.0)
+    gluPerspective(30.0, x.to_f / y, 0.5, 20.0)
     glMatrixMode(GL_MODELVIEW)
     glViewport(0, 0, x, y)
   end
@@ -80,7 +80,9 @@ class SpinningCube
       if(@callbacks == nil)
           @callbacks = {}
       end
-      @callbacks[sym] = method(sym).to_proc
+      if(@callbacks[sym] == nil)
+          @callbacks[sym] = method(sym).to_proc
+      end
       @callbacks[sym]
   end
 
