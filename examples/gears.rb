@@ -200,9 +200,9 @@ class Gears
   # Change view angle, exit upon ESC
   def key(k, x, y)
     case k
-      when ?z
+      when ?z.ord
         @view_rotz += 5.0
-      when ?Z
+      when ?Z.ord
         @view_rotz -= 5.0
       when 27 # Escape
         exit
@@ -283,7 +283,7 @@ class Gears
   end
 
   def visible(vis)
-    glutIdleFunc((vis == GLUT_VISIBLE ? method(:idle).to_proc : nil))
+    glutIdleFunc((vis == GLUT_VISIBLE ? make_callback(:idle) : nil))
   end
 
   def mouse(button, state, x, y)
@@ -298,6 +298,16 @@ class Gears
     end
     @x0, @y0 = x, y
   end
+  
+  def make_callback(sym)
+      if(@callbacks == nil)
+          @callbacks = {}
+      end
+      if(@callbacks[sym] == nil)
+          @callbacks[sym] = method(sym).to_proc
+      end
+      @callbacks[sym]
+  end
 
   def initialize
     # argc, argv parameters
@@ -310,13 +320,13 @@ class Gears
     glutCreateWindow('Gears')
     init()
 
-    glutDisplayFunc(method(:draw).to_proc)
-    glutReshapeFunc(method(:reshape).to_proc)
-    glutKeyboardFunc(method(:key).to_proc)
-    glutSpecialFunc(method(:special).to_proc)
-    glutVisibilityFunc(method(:visible).to_proc)
-    glutMouseFunc(method(:mouse).to_proc)
-    glutMotionFunc(method(:motion).to_proc)
+    glutDisplayFunc(make_callback(:draw))
+    glutReshapeFunc(make_callback(:reshape))
+    glutKeyboardFunc(make_callback(:key))
+    glutSpecialFunc(make_callback(:special))
+    glutVisibilityFunc(make_callback(:visible))
+    glutMouseFunc(make_callback(:mouse))
+    glutMotionFunc(make_callback(:motion))
   end
 
   def start

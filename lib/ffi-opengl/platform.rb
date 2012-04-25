@@ -1,7 +1,7 @@
 require 'rbconfig'
 module GL
   extend FFI::Library
-  case Config::CONFIG['target_os']
+  case RbConfig::CONFIG['target_os']
   when /linux/
     ffi_lib 'libGL.so.1'
   when /darwin/
@@ -10,7 +10,7 @@ module GL
 end
 module GLU
   extend FFI::Library
-  case Config::CONFIG['target_os']
+  case RbConfig::CONFIG['target_os']
   when /linux/
     ffi_lib 'libGLU.so.1'
   when /darwin/
@@ -19,7 +19,7 @@ module GLU
 end
 module GLUT
   extend FFI::Library
-  case Config::CONFIG['target_os']
+  case RbConfig::CONFIG['target_os']
   when /linux/
     ffi_lib 'libglut.so.3'
   when /darwin/

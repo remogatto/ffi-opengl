@@ -145,11 +145,12 @@ DIFF = if WIN32 then 'diff.exe'
          else 'diff' end
        end unless defined? DIFF
 
-SUDO = if WIN32 then ''
-       else
-         if quiet {system 'which sudo'} then 'sudo'
-         else '' end
-       end
+SUDO = ''
+# SUDO = if WIN32 then ''
+#        else
+#          if quiet {system 'which sudo'} then 'sudo'
+#          else '' end
+#        end
 
 RCOV = WIN32 ? 'rcov.bat' : 'rcov'
 RDOC = WIN32 ? 'rdoc.bat' : 'rdoc'
@@ -209,7 +210,8 @@ end
 # will be used.
 #
 def depend_on( name, version = nil )
-  spec = Gem.source_index.find_name(name).last
+  # spec = Gem.source_index.find_name(name).last
+  spec = Gem::Specification::find_by_name(name)
   version = spec.version.to_s if version.nil? and !spec.nil?
 
   PROJ.gem.dependencies << case version
